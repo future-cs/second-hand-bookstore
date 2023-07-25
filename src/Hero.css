@@ -137,73 +137,7 @@ body {
 .hidden {
   display: none;
 }
-/* ****************************************************** NAV */
-/* NAV */
 
-.nav {
-  height: 8rem;
-  padding: 1.2rem 2.4rem;
-  border-bottom: 0.5px solid #1c5f3f;
-
-  background-color: #fff;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* height: 100%; */
-}
-.nav-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.2rem;
-}
-
-.nav-img {
-  width: 5rem;
-}
-
-.logo-text {
-  font-size: 2.4rem;
-  color: #034d2a;
-  font-weight: 400;
-  /* letter-spacing: 0.5px; */
-  text-align: center;
-}
-
-.main-nav--ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2.4rem;
-}
-
-.main-nav--li {
-  list-style: none;
-  text-decoration: none;
-}
-
-.main-nav--li a:link,
-.main-nav--li a:visited {
-  padding: 0.8rem 1.6rem;
-
-  background-color: #cddbd4;
-  color: #034d2a;
-
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.4rem;
-  cursor: pointer;
-  /* border: 1px solid #1c5f3f; */
-  border-radius: 4px;
-  transition: all 0.3s;
-}
-.main-nav--li a:hover,
-.main-nav--li a:active {
-  background-color: #034d2a;
-  color: #e6edea;
-  /* transform: scale(1.05); */
-}
 /* ****************************************************** HERO */
 /* HERO */
 
