@@ -158,7 +158,7 @@ function MainComponent({ handleFullViewId, inventoryData }) {
   if (inventoryDataFilter) {
     return (
       <section className="main-section">
-        <div className="main-component">
+        <div className="main-component main-component-grid">
           <div className="main-div--left">
             <h2>Filters</h2>
             <ul>
@@ -267,17 +267,13 @@ function MainComponent({ handleFullViewId, inventoryData }) {
                   </div>
                 </div>
               </li>
-              <li>
-                <div className="filter-button--div">
-                  <div
-                    className="filter-button"
-                    onClick={() => handleFilters()}
-                  >
-                    <button>Apply Filters</button>
-                  </div>
-                </div>
-              </li>
             </ul>
+
+            <div className="filter-button--apply">
+              <button className="all--btn" onClick={() => handleFilters()}>
+                Apply Filters
+              </button>
+            </div>
           </div>
           <div className="main-div--right">
             <div className="main-div--list"></div>
@@ -291,11 +287,15 @@ function MainComponent({ handleFullViewId, inventoryData }) {
               ))}
             </div>
             <div className="main-div--right-btn">
-              <button onClick={() => handlePreviousPage()}>Previous</button>
+              <button className="all--btn" onClick={() => handlePreviousPage()}>
+                Previous
+              </button>
               <h2>
                 {page} of {totalPages}
               </h2>
-              <button onClick={() => handleNextPage()}>Next</button>
+              <button className="all--btn" onClick={() => handleNextPage()}>
+                Next
+              </button>
             </div>
           </div>
         </div>
@@ -349,8 +349,8 @@ function OpenLibrary({ itemProfile, handleFullViewId }) {
         </div>
         <div className="item-div--text">
           <h3>{openDistruc.title}</h3>
-          <p>{openDistruc.authors[0].name}</p>
-          <p>Price: ${itemProfile.price}</p>
+          <p>by {openDistruc.authors[0].name}</p>
+          <p className="item-price">${itemProfile.price}</p>
         </div>
       </div>
     );
