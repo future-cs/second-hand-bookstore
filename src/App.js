@@ -40,6 +40,8 @@ function App() {
       console.log(itemId);
       const testA = addToCart.find((item) => item.isbn === itemId.isbn);
       testA.counter = testA.counter + counter;
+      setNav(nav + 1);
+
       console.log(testA);
     } else {
       const addToCartLogic = addToCart;
