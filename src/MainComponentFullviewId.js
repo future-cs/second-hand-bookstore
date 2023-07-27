@@ -1,64 +1,110 @@
+import React, { useState } from "react";
+import {
+  HiShoppingCart,
+  HiBookOpen,
+  HiMail,
+  HiStar,
+  HiPlus,
+  HiMinus,
+} from "react-icons/hi";
+
 function MainComponentFullViewId({ fullViewId, fullViewIdB, handleAddToCart }) {
+  const [orderCounter, setOrderCounter] = useState(1);
+
   return (
     <section className="main-section">
-      <div className="main-component main-component-grid-id">
-        <div className="fullView-img">
+      <div className="full-view-grid">
+        <div className="full-view-div-img">
           <img
-            className="fullView-img"
-            src={fullViewId.cover.medium}
-            alt="Computer Drawing"
+            className="full-view-img"
+            src={fullViewId.cover.large}
+            alt="Book Cover."
           ></img>
         </div>
-        <div className="component-div--right">
-          <ul className="component-div--right-ul">
-            <li className="component-div--right-li">
-              <span className="component-div--right-li--item">Title:</span>
-              <span className="component-div--right-li--text">
-                <h1>{fullViewId.title}</h1>;
-              </span>
+
+        <div className="full-view-content">
+          <div className="full-view-tags">
+            <div className="full-view-tag">
+              <HiBookOpen className="tag-icon" />
+              {fullViewIdB.softcover ? "Softcover" : "Hardcover"}
+            </div>
+            <div className="full-view-tag">
+              <HiStar className="tag-icon" />
+              {fullViewIdB.isNew ? "New" : "Used"}
+            </div>
+            <div className="full-view-tag">
+              <HiMail className="tag-icon" />
+              {fullViewIdB.freeShipping ? "Free Shipping" : "Not Free"}
+            </div>
+          </div>
+          <ul className="full-view-ul">
+            <li className="full-view-li">
+              {/* <span className="full-view-headers">Title:</span> */}
+              <span className="full-view-results">{fullViewId.title}</span>
             </li>
-            <li className="component-div--right-li">
-              <span className="component-div--right-li--item">Author:</span>
-              <span className="component-div--right-li--text">
+            <li className="full-view-li">
+              <span className="full-view-headers">Author:</span>
+              <span className="full-view-results">
                 {fullViewId.authors[0].name}
               </span>
             </li>
-            <li className="component-div--right-li">
-              <span className="component-div--right-li--item">Pages:</span>
-              <span className="component-div--right-li--text">
+            <li className="full-view-li">
+              <span className="full-view-headers">Pages:</span>
+              <span className="full-view-results">
                 {fullViewId.number_of_pages}
               </span>
             </li>
-            <li className="component-div--right-li">
-              <span className="component-div--right-li--item">
-                Date of Publication:
-              </span>
-              <span className="component-div--right-li--text">
+            <li className="full-view-li">
+              <span className="full-view-headers">Date of Publication:</span>
+              <span className="full-view-results">
                 {fullViewId.publish_date}
               </span>
             </li>
-            <li className="component-div--right-li">
-              <span className="component-div--right-li--item">Publisher:</span>
-              <span className="component-div--right-li--text">
+            <li className="full-view-li">
+              <span className="full-view-headers">Publisher:</span>
+              <span className="full-view-results">
                 {fullViewId.publishers[0].name}
               </span>
             </li>
-            <li className="component-div--right-li">
-              <span className="component-div--right-li--item">Notes:</span>
-              <span className="component-div--right-li--text">
-                {fullViewId.notes}
-              </span>
+            <li className="full-view-li">
+              <span className="full-view-headers">Notes:</span>
+              <span className="full-view-results">{fullViewId.notes}</span>
             </li>
-            <li className="component-div--right-li">
-              <span className="component-div--right-li--item">
+            <li className="full-view-li">
+              <span className="full-view-headers">
                 What is this book about:
               </span>
-              <span className="component-div--right-li--text">
+              <span className="full-view-results">
                 {fullViewId.subjects.map((i) => i.name).join(" ,")}
               </span>
             </li>
           </ul>
-          <button onClick={() => handleAddToCart(fullViewIdB)}>CART</button>
+
+          <div className="full-view--price-cart">
+            <p className="full-view--price">Price: ${fullViewIdB.price}</p>
+            <div className="full-view--btn-div">
+              <button
+                className="full-view--btn"
+                onClick={() => setOrderCounter((n) => n - 1)}
+              >
+                <HiMinus />
+              </button>
+              <p>{orderCounter}</p>
+              <button
+                className="full-view--btn"
+                onClick={() => setOrderCounter((n) => n + 1)}
+              >
+                <HiPlus />
+              </button>
+            </div>
+            <button
+              onClick={() => handleAddToCart(fullViewIdB, orderCounter)}
+              className="full-view--btn full-view--btn-add"
+            >
+              <HiShoppingCart />
+              Add
+            </button>
+          </div>
         </div>
       </div>
     </section>

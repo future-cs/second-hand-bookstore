@@ -29,18 +29,30 @@ function App() {
     setFullViewId(null);
     setMainSection(false);
   }
-  function handleFullViewId(id, idB) {
+  function handleFullViewId(id, idB, itemProfile) {
     setFullViewId(id);
     setFullViewIdB(idB);
     setMainSection(true);
   }
 
-  function handleAddToCart(itemId) {
-    const addToCartLogic = addToCart;
-    addToCartLogic.push(itemId);
-    setAddToCart(addToCartLogic);
-    setNav(nav + 1);
-    console.log(addToCart);
+  function handleAddToCart(itemId, counter, fullViewBBBBB) {
+    if (addToCart.some((item) => item.isbn === itemId.isbn)) {
+      console.log(itemId);
+      const testA = addToCart.find((item) => item.isbn === itemId.isbn);
+      testA.counter = testA.counter + counter;
+      console.log(testA);
+    } else {
+      const addToCartLogic = addToCart;
+      let makeObj = {};
+      makeObj = itemId;
+      makeObj.counter = counter;
+      // makeObj.fullViewBBBBB = fullViewBBBBB;
+
+      addToCartLogic.push(makeObj);
+      setAddToCart(addToCartLogic);
+      setNav(nav + 1);
+      console.log(addToCart);
+    }
   }
 
   return (
@@ -55,6 +67,7 @@ function App() {
         <MainComponent
           handleFullViewId={handleFullViewId}
           inventoryData={inventoryData}
+          handleAddToCart={handleAddToCart}
         />
       ) : (
         <></>

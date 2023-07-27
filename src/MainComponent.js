@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { HiShoppingCart } from "react-icons/hi";
 
-function MainComponent({ handleFullViewId, inventoryData }) {
+function MainComponent({ handleFullViewId, inventoryData, handleAddToCart }) {
   const [isSoftcover, setIsSoftcover] = useState(undefined);
   const [coverSelected, setCoverSelected] = useState(undefined);
   const [isNew, setIsNew] = useState(undefined);
@@ -158,7 +159,7 @@ function MainComponent({ handleFullViewId, inventoryData }) {
   if (inventoryDataFilter) {
     return (
       <section className="main-section">
-        <div className="main-component main-component-grid">
+        <div className="main-component">
           <div className="main-div--left">
             <h2>Filters</h2>
             <ul>
@@ -245,7 +246,7 @@ function MainComponent({ handleFullViewId, inventoryData }) {
                           : "filter-check"
                       }
                     ></div>
-                    <div>Not Free Shipping</div>
+                    <div style={{ color: "red" }}>Not Free Shipping</div>
                   </div>
                 </div>
               </li>
@@ -270,8 +271,8 @@ function MainComponent({ handleFullViewId, inventoryData }) {
             </ul>
 
             <div className="filter-button--apply">
-              <button className="all--btn" onClick={() => handleFilters()}>
-                Apply Filters
+              <button className="all--btn" onClick={() => handleFilters(true)}>
+                Apply
               </button>
             </div>
           </div>
@@ -283,6 +284,7 @@ function MainComponent({ handleFullViewId, inventoryData }) {
                   key={item.isbn}
                   itemProfile={item}
                   handleFullViewId={handleFullViewId}
+                  handleAddToCart={handleAddToCart}
                 />
               ))}
             </div>
@@ -304,9 +306,11 @@ function MainComponent({ handleFullViewId, inventoryData }) {
   }
 }
 
-function OpenLibrary({ itemProfile, handleFullViewId }) {
+function OpenLibrary({ itemProfile, handleFullViewId, handleAddToCart }) {
   const [openFetch, setOpenFetch] = useState(null);
-  const itemKey = itemProfile.isbn;
+  const [orderCounter, setOrderCounter] = useState(1);
+
+  // const itemKey = itemProfile.isbn;
   useEffect(() => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -327,31 +331,60 @@ function OpenLibrary({ itemProfile, handleFullViewId }) {
   if (openFetch) {
     const openDistruc = openFetch[`ISBN:${itemProfile.isbn}`];
     return (
-      <div
-        className="list-item openLibrary"
-        onClick={() => handleFullViewId(openDistruc, itemKey)}
-      >
-        <div className="item-div--img">
-          {" "}
-          {openDistruc.cover !== null ? (
-            <img
-              className="hero-img"
-              src={openDistruc.cover.medium}
-              alt="Computer Drawing"
-            ></img>
-          ) : (
-            <img
-              className="hero-img"
-              src="./img/logo512.png"
-              alt="Computer Drawing"
-            ></img>
-          )}
+      <div className="list-item openLibrary">
+        <div
+          className="list-item--img-text"
+          // className="list-item openLibrary"
+          onClick={() => handleFullViewId(openDistruc, itemProfile)}
+        >
+          <div className="item-div--img">
+            {" "}
+            {openDistruc.cover !== null ? (
+              <img
+                className="item-img"
+                src={openDistruc.cover.medium}
+                alt="Computer Drawing"
+              ></img>
+            ) : (
+              <img
+                className="item-img"
+                src="./img/logo512.png"
+                alt="Computer Drawing"
+              ></img>
+            )}
+          </div>
+          <div className="item-div--text">
+            <h3>{openDistruc.title}</h3>
+            <p>by {openDistruc.authors[0].name}</p>
+          </div>
         </div>
-        <div className="item-div--text">
-          <h3>{openDistruc.title}</h3>
-          <p>by {openDistruc.authors[0].name}</p>
+        <div className="list-item--price-cart">
           <p className="item-price">${itemProfile.price}</p>
+          <div className="list-item--btn-div">
+            <button
+              className="item--btn"
+              onClick={() => setOrderCounter((n) => n - 1)}
+            >
+              -
+            </button>
+            <p>{orderCounter}</p>
+            <button
+              className="item--btn"
+              onClick={() => setOrderCounter((n) => n + 1)}
+            >
+              +
+            </button>
+            <button
+              onClick={() => handleAddToCart(itemProfile, orderCounter)}
+              className="item--btn item--btn-add"
+            >
+              <HiShoppingCart />
+              Add
+            </button>
+          </div>
         </div>
+
+        {/* <div style={{ zIndex: "9" }} className="list-item--btn"></div> */}
       </div>
     );
   }

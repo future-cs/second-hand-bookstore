@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import inventoryExternalData from "./Inventory";
+// import inventoryExternalData from "./Inventory";
 import { HiHome, HiShoppingCart } from "react-icons/hi";
 
-function NavComponent({ handleHomeView, addToCart }) {
+function NavComponent({ handleHomeView, addToCart, fullViewBBBB }) {
   const [cartOpen, setCartOpen] = useState(false);
+
+  const totalCounter = addToCart.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.counter,
+    0
+  );
+
   return (
     <header className="header">
       <div className="nav">
@@ -37,7 +43,7 @@ function NavComponent({ handleHomeView, addToCart }) {
                 <HiShoppingCart />
                 <span>Cart</span>
                 <div className="cart-counter">
-                  <p>{addToCart.length}</p>
+                  <p>{totalCounter}</p>
                 </div>
               </button>
             </li>
@@ -48,20 +54,30 @@ function NavComponent({ handleHomeView, addToCart }) {
         cartOpen={cartOpen}
         setCartOpen={setCartOpen}
         addToCart={addToCart}
+        fullViewBBBB={fullViewBBBB}
       />
     </header>
   );
 }
 
-function CartFullview({ cartOpen, setCartOpen, addToCart }) {
-  const cartList = inventoryExternalData.filter((item) =>
-    addToCart.includes(item.isbn)
-  );
-  const totalPrice = cartList.reduce(
-    (accumulator, currentValue) => accumulator + currentValue.price,
+function CartFullview({ cartOpen, setCartOpen, addToCart, fullViewBBBB }) {
+  // const testCCC = addToCart.map((item) => item.id);
+  // console.log(testCCC);
+  // const cartList = inventoryExternalData.filter((item) =>
+  //   addToCart.includes(item.isbn)
+  // );
+
+  // const cartListB = inventoryExternalData.map((item) => item.id === addToCart.id)
+  const totalPrice = addToCart.reduce(
+    (accumulator, currentValue) =>
+      accumulator + currentValue.price * currentValue.counter,
     0
   );
-  console.log(cartList);
+  const totalCounter = addToCart.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.counter,
+    0
+  );
+  // console.log(cartList);
   console.log(totalPrice);
   return (
     <>
@@ -81,16 +97,16 @@ function CartFullview({ cartOpen, setCartOpen, addToCart }) {
               <div className="cart-align">Quantity</div>
               <div className="cart-align">Price</div>
             </div>
-            {cartList.map((item) => (
+            {addToCart.map((item) => (
               <div className="cart-item cart-grid">
                 <div>{item.alternative_title}</div>
-                <div className="cart-align">1</div>
-                <div className="cart-align">${item.price}</div>
+                <div className="cart-align">{item.counter}</div>
+                <div className="cart-align">${item.price * item.counter}</div>
               </div>
             ))}
             <div className="cart-total cart-grid">
               <div>Total:</div>
-              <div className="cart-align">{addToCart.length}</div>
+              <div className="cart-align">{totalCounter}</div>
               <div className="cart-align">${totalPrice}</div>
             </div>
           </div>
