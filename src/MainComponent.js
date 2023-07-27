@@ -154,7 +154,6 @@ function MainComponent({ handleFullViewId, inventoryData, handleAddToCart }) {
       page * itemsPerPage
     );
     setPageData(currentPageData);
-    setPage(1);
   }
 
   if (inventoryDataFilter) {
