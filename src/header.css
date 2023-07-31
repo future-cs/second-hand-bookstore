@@ -112,7 +112,7 @@
   right: 0rem;
   top: 8rem;
 
-  height: 100vmin;
+  /* height: 100vmin; */
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid #97adc8;
@@ -125,7 +125,7 @@
   box-shadow: 0 2.4rem 2.4rem rgba(0, 0, 0, 0.1);
   min-height: 50vmin;
   margin: 10rem auto;
-  width: 80rem;
+  /* width: 80rem; */
   background-color: white;
 
   padding: 2.4rem;

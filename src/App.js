@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import "./Hero.css";
-import "./nav.css";
-import NavComponent from "./Nav";
+import "./general.css";
+import "./header.css";
+import "./queries.css";
+import "./main.css";
+import NavComponent from "./Header";
 import inventoryExternalData from "./Inventory";
 import MainComponent from "./MainComponent";
 import MainComponentFullViewId from "./MainComponentFullviewId";
