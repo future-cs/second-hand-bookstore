@@ -15,7 +15,7 @@
   padding: 1.2rem 2.4rem;
   border-bottom: 1px solid #d2dae5;
 
-  background-color: #fff;
+  background-color: #e9edf2;
 
   display: flex;
   justify-content: space-between;
@@ -104,112 +104,12 @@
   font-size: 1.2rem;
 }
 
-/* ****************************************************** CART */
-/* CART */
-.cart-container-background {
-  position: absolute;
-  z-index: 9999;
-  right: 0rem;
-  top: 8rem;
+/*****************************/
+/* BELOW 544px (Phones) */
+/*****************************/
 
-  /* height: 100vmin; */
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid #97adc8;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.cart-container {
-  box-shadow: 0 2.4rem 2.4rem rgba(0, 0, 0, 0.1);
-  min-height: 50vmin;
-  margin: 10rem auto;
-  /* width: 80rem; */
-  background-color: white;
-
-  padding: 2.4rem;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1.2rem;
-
-  overflow-y: auto;
-}
-.cart-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.cart-header h2 {
-  font-size: 2.4rem;
-}
-
-.cart-body {
-  display: flex;
-  flex-direction: column;
-  /* gap: 3.2rem; */
-  padding: 2.4rem;
-}
-.cart-body-title,
-.cart-total {
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-.cart-item {
-  font-size: 1.6rem;
-}
-.cart-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3.2rem;
-  padding: 2.4rem;
-}
-
-.cart-grid:first-child {
-  font-weight: 700;
-}
-
-.cart-align {
-  text-align: center;
-}
-
-.cart-total,
-.cart-body-title {
-  border: 1px solid #d2dae5;
-  border-radius: 4px;
-}
-
-.cart-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  margin-bottom: 3.2rem;
-  margin-top: auto;
-}
-
-.checkout--btn {
-  color: #d2dae5;
-  border: none;
-  background-color: #1c4171;
-
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.8rem;
-  cursor: pointer;
-  padding: 1.6rem 3.2rem;
-  border-radius: 4px;
-  transition: all 0.3s;
-
-  display: flex;
-  gap: 0.4rem;
-}
-
-.checkout--btn:hover,
-.checkout--btn:active {
-  transform: scale(1.03);
+@media (max-width: 34em) {
+  .header-btn--text {
+    display: none;
+  }
 }

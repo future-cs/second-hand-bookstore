@@ -12,7 +12,7 @@ import MainComponentFullViewId from "./MainComponentFullviewId";
 function App() {
   const [fullViewId, setFullViewId] = useState(null);
   const [fullViewIdB, setFullViewIdB] = useState(null);
-
+  const [cartOpenClose, setCartOpenClose] = useState(false);
   const [mainSection, setMainSection] = useState(false);
   const [inventoryData, setInventoryData] = useState(null);
   const [nav, setNav] = useState(10);
@@ -59,12 +59,17 @@ function App() {
     }
   }
 
+  function handleCartOpenClose() {
+    setCartOpenClose(!cartOpenClose);
+  }
+
   return (
     <div className="App">
       <NavComponent
         key={nav}
         handleHomeView={handleHomeView}
         addToCart={addToCart}
+        handleCartOpenClose={handleCartOpenClose}
       />
 
       {mainSection === false && inventoryData !== null ? (
@@ -72,6 +77,9 @@ function App() {
           handleFullViewId={handleFullViewId}
           inventoryData={inventoryData}
           handleAddToCart={handleAddToCart}
+          cartOpenClose={cartOpenClose}
+          addToCart={addToCart}
+          handleCartOpenClose={handleCartOpenClose}
         />
       ) : (
         <></>

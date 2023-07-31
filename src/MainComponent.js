@@ -6,9 +6,18 @@ import {
   HiMinus,
   HiArrowCircleLeft,
   HiArrowCircleRight,
+  HiX,
+  HiFilter,
 } from "react-icons/hi";
 
-function MainComponent({ handleFullViewId, inventoryData, handleAddToCart }) {
+function MainComponent({
+  handleFullViewId,
+  inventoryData,
+  handleAddToCart,
+  cartOpenClose,
+  addToCart,
+  handleCartOpenClose,
+}) {
   const [isSoftcover, setIsSoftcover] = useState(undefined);
   const [coverSelected, setCoverSelected] = useState(undefined);
   const [isNew, setIsNew] = useState(undefined);
@@ -20,6 +29,7 @@ function MainComponent({ handleFullViewId, inventoryData, handleAddToCart }) {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState();
   const [pageData, setPageData] = useState([]);
+  const [filterSlide, setFilterSlide] = useState(true);
 
   useEffect(() => {
     handleFilters();
@@ -100,6 +110,8 @@ function MainComponent({ handleFullViewId, inventoryData, handleAddToCart }) {
   }
 
   function handleFilters() {
+    setFilterSlide(true);
+
     if (
       isSoftcover === undefined &&
       isNew === undefined &&
@@ -158,131 +170,148 @@ function MainComponent({ handleFullViewId, inventoryData, handleAddToCart }) {
     return (
       <main>
         <section className="main-section">
-          <div className="main-component">
+          <div
+            className={
+              cartOpenClose ? "cart-slide" : "cart-slide cart-slide--hidden"
+            }
+          >
+            <CartFullviewB
+              cartOpenClose={cartOpenClose}
+              addToCart={addToCart}
+              handleCartOpenClose={handleCartOpenClose}
+            />
+          </div>
+          <div
+            className={
+              cartOpenClose ? "main-component test-opacity" : "main-component "
+            }
+          >
             <div className="main-div--left">
-              <h3>Filters</h3>
-              <ul className="filter--ul">
-                <li>
-                  <h4>Binding</h4>
-                  <div className="filter-button--div">
-                    <div
-                      className="filter-button"
-                      onClick={() => handleIsSoftcover()}
-                    >
-                      <div
-                        className={
-                          coverSelected === "soft"
-                            ? "filter-check--active filter-check"
-                            : "filter-check"
-                        }
-                      ></div>
-                      <div>Softcover</div>
-                    </div>
-                    <div
-                      className="filter-button"
-                      onClick={() => handleIsHardcover()}
-                    >
-                      <div
-                        className={
-                          coverSelected === "hard"
-                            ? "filter-check--active filter-check"
-                            : "filter-check"
-                        }
-                      ></div>
-                      <div>Hardcover</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <h4>Condition</h4>
-                  <div className="filter-button--div">
-                    <div
-                      className="filter-button"
-                      onClick={() => handleIsNew()}
-                    >
-                      <div
-                        className={
-                          conditionSelected === "new"
-                            ? "filter-check--active filter-check"
-                            : "filter-check"
-                        }
-                      ></div>
-                      <div>New</div>
-                    </div>
-                    <div
-                      className="filter-button"
-                      onClick={() => handleIsUsed()}
-                    >
-                      <div
-                        className={
-                          conditionSelected === "used"
-                            ? "filter-check--active filter-check"
-                            : "filter-check"
-                        }
-                      ></div>
-                      <div>Used</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <h4>Shipping</h4>
-                  <div className="filter-button--div">
-                    <div
-                      className="filter-button"
-                      onClick={() => handleIsFreeShipping()}
-                    >
-                      <div
-                        className={
-                          shipmentSelected === "free"
-                            ? "filter-check--active filter-check"
-                            : "filter-check"
-                        }
-                      ></div>
-                      <div>Free Shipping</div>
-                    </div>
-                    {/* <div
-                      className="filter-button"
-                      onClick={() => handleIsNotFreeShipping()}
-                    >
-                      <div
-                        className={
-                          shipmentSelected === "notFree"
-                            ? "filter-check--active filter-check"
-                            : "filter-check"
-                        }
-                      ></div>
-                      <div style={{ color: "red" }}>Not Free Shipping</div>
-                    </div> */}
-                  </div>
-                </li>
-                <li>
-                  <h4>Clear</h4>
-                  <div className="filter-button--div">
-                    <div
-                      className="filter-button"
-                      onClick={() => handleResetFilters()}
-                    >
-                      <div
-                        className={
-                          clearSelected === "clear"
-                            ? "filter-check--active filter-check"
-                            : "filter-check"
-                        }
-                      ></div>
-                      <div>No Filters</div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-
-              <div className="filter-button--apply">
+              <div className="filter-title">
+                <h3>Filters</h3>
                 <button
-                  className="all--btn"
-                  onClick={() => handleFilters(true)}
+                  className="filter-slide--btn"
+                  onClick={() => setFilterSlide(!filterSlide)}
                 >
-                  <HiCollection />
-                  Apply
+                  {filterSlide ? <HiFilter /> : <HiX />}
                 </button>
+              </div>
+
+              <div
+                className={
+                  filterSlide ? "filter-slide" : "filter-slide--hidden"
+                }
+              >
+                <ul className="filter--ul">
+                  <li>
+                    <h4>Binding</h4>
+                    <div className="filter-button--div">
+                      <div
+                        className="filter-button"
+                        onClick={() => handleIsSoftcover()}
+                      >
+                        <div
+                          className={
+                            coverSelected === "soft"
+                              ? "filter-check--active filter-check"
+                              : "filter-check"
+                          }
+                        ></div>
+                        <div>Softcover</div>
+                      </div>
+                      <div
+                        className="filter-button"
+                        onClick={() => handleIsHardcover()}
+                      >
+                        <div
+                          className={
+                            coverSelected === "hard"
+                              ? "filter-check--active filter-check"
+                              : "filter-check"
+                          }
+                        ></div>
+                        <div>Hardcover</div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <h4>Condition</h4>
+                    <div className="filter-button--div">
+                      <div
+                        className="filter-button"
+                        onClick={() => handleIsNew()}
+                      >
+                        <div
+                          className={
+                            conditionSelected === "new"
+                              ? "filter-check--active filter-check"
+                              : "filter-check"
+                          }
+                        ></div>
+                        <div>New</div>
+                      </div>
+                      <div
+                        className="filter-button"
+                        onClick={() => handleIsUsed()}
+                      >
+                        <div
+                          className={
+                            conditionSelected === "used"
+                              ? "filter-check--active filter-check"
+                              : "filter-check"
+                          }
+                        ></div>
+                        <div>Used</div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <h4>Shipping</h4>
+                    <div className="filter-button--div">
+                      <div
+                        className="filter-button"
+                        onClick={() => handleIsFreeShipping()}
+                      >
+                        <div
+                          className={
+                            shipmentSelected === "free"
+                              ? "filter-check--active filter-check"
+                              : "filter-check"
+                          }
+                        ></div>
+                        <div>Free Shipping</div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <h4>Clear</h4>
+                    <div className="filter-button--div">
+                      <div
+                        className="filter-button"
+                        onClick={() => handleResetFilters()}
+                      >
+                        <div
+                          className={
+                            clearSelected === "clear"
+                              ? "filter-check--active filter-check"
+                              : "filter-check"
+                          }
+                        ></div>
+                        <div>No Filters</div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+
+                <div className="filter-button--apply">
+                  <button
+                    className="all--btn"
+                    onClick={() => handleFilters(true)}
+                  >
+                    <HiCollection />
+                    Apply
+                  </button>
+                </div>
               </div>
             </div>
             <div className="main-div--right">
@@ -397,6 +426,55 @@ function OpenLibrary({ itemProfile, handleFullViewId, handleAddToCart }) {
       </div>
     );
   }
+}
+
+function CartFullviewB({ handleCartOpenClose, addToCart }) {
+  const totalPrice = addToCart.reduce(
+    (accumulator, currentValue) =>
+      accumulator + currentValue.price * currentValue.counter,
+    0
+  );
+  const totalCounter = addToCart.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.counter,
+    0
+  );
+  // console.log(cartList);
+  console.log(totalPrice);
+  return (
+    <>
+      <div className="cart-container">
+        <div className="cart-header">
+          <h2>Cart List</h2>
+          <button className="all--btn" onClick={() => handleCartOpenClose()}>
+            <HiX />
+          </button>
+        </div>
+        <div className="cart-body">
+          <div className="cart-body-title cart-grid">
+            <div>Title</div>
+            <div className="cart-align">Quantity</div>
+            <div className="cart-align">Price</div>
+          </div>
+          {addToCart.map((item) => (
+            <div className="cart-item cart-grid">
+              <div>{item.alternative_title}</div>
+              <div className="cart-align">{item.counter}</div>
+              <div className="cart-align">${item.price * item.counter}</div>
+            </div>
+          ))}
+
+          <div className="cart-total cart-grid">
+            <div>Total:</div>
+            <div className="cart-align">{totalCounter}</div>
+            <div className="cart-align">${totalPrice}</div>
+          </div>
+        </div>
+        <div className="cart-footer">
+          <button className="checkout--btn">CHECKOUT</button>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default MainComponent;
