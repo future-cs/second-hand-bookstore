@@ -34,12 +34,12 @@ function MainComponentFullViewId({ fullViewId, fullViewIdB, handleAddToCart }) {
             </div>
             <div className="full-view-tag">
               <HiMail className="tag-icon" />
-              {fullViewIdB.freeShipping ? "Free Shipping" : "Not Free"}
+
+              {fullViewIdB.freeShipping ? "Free Shipping" : "Not Free Shipping"}
             </div>
           </div>
           <ul className="full-view-ul">
             <li className="full-view-li">
-              {/* <span className="full-view-headers">Title:</span> */}
               <span className="full-view-results">{fullViewId.title}</span>
             </li>
             <li className="full-view-li">

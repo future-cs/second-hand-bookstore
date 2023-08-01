@@ -4,10 +4,13 @@ import "./general.css";
 import "./header.css";
 import "./queries.css";
 import "./main.css";
+import "./footer.css";
+
 import NavComponent from "./Header";
 import inventoryExternalData from "./Inventory";
 import MainComponent from "./MainComponent";
 import MainComponentFullViewId from "./MainComponentFullviewId";
+import FooterComponent from "./Footer";
 
 function App() {
   const [fullViewId, setFullViewId] = useState(null);
@@ -93,6 +96,7 @@ function App() {
       ) : (
         <></>
       )}
+      <FooterComponent />
     </div>
   );
 }

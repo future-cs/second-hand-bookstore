@@ -1,0 +1,125 @@
+.footer {
+  background-color: #e9edf2;
+  padding: 3.2rem 0rem;
+}
+
+.grid--footer {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 4.8rem 4.8rem;
+
+  grid-template-columns: 3fr 3fr 2fr 2fr 2fr;
+  gap: 4.8rem;
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2.4rem;
+}
+
+.footer-logo {
+  margin-bottom: 4.8rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.logo-img {
+  width: 25%;
+}
+.footer-logo--text h1 {
+  font-size: 2.4rem;
+  color: #1f487e;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.footer-logo--text div {
+  font-size: 1.6rem;
+  color: #376996;
+  font-weight: 400;
+}
+
+.footer-heading {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 3.2rem;
+  color: #1f487e;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #376996;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  /* color: #555; */
+  line-height: 1.6;
+  margin-top: auto;
+  color: #376996;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.footer-link:link,
+.footer-link:visited,
+.footer-nav p {
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 400;
+  transition: all 0.3s;
+  color: #7991b2;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #1f487e;
+  font-weight: 500;
+}
+
+/*****************************/
+/* BELOW 944px (Tablets) */
+/*****************************/
+@media (max-width: 59em) {
+  .grid--footer {
+    grid-template-columns: 3fr 3fr 2fr 2fr 2fr;
+    gap: 2.4rem;
+  }
+}
+
+/*****************************/
+/* BELOW 704px (Smaller Tablets) */
+/*****************************/
+
+@media (max-width: 44em) {
+  .grid--footer {
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+    gap: 4.8rem;
+  }
+
+  .nav-col {
+    grid-row: 1;
+    grid-column: span 2;
+  }
+
+  .logo-col,
+  .address-col {
+    grid-column: span 3;
+  }
+}
