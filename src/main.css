@@ -239,6 +239,8 @@
 .main-div--list {
   column-gap: 2.4rem;
   row-gap: 2.4rem;
+
+  padding: 1.2rem;
 }
 
 .list-item {

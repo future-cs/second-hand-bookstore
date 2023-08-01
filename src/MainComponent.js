@@ -156,7 +156,7 @@ function MainComponent({
     setInventoryDataFilter(filteredArray);
 
     // Pagination
-    const itemsPerPage = 9;
+    const itemsPerPage = 12;
     const totalNumberPages = Math.ceil(filteredArray.length / itemsPerPage);
     setTotalPages(totalNumberPages);
     const currentPageData = filteredArray.slice(
