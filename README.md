@@ -13,7 +13,7 @@
 
 - Navigate through our collection effortlessly by using our intuitive filtering options. Are you drawn to the tactile charm of a softcover or the enduring elegance of a hardcover? With a click, you can sort through your preferred condition, whether new or used, and select only free shipping options. Ensure that every book you explore aligns perfectly with your reading preferences.
 
-- Click in the book to access information by opening the Book Profile. Immerse yourself in the complete narrative of each book, from its author and plot intricacies to the essence that makes it unforgettable. With a simple click, access the extended world within the pages, guiding your choices and igniting your passion for reading.
+- Click in the book to access information by opening the Book Profile. With a simple click, access the extended world within the pages, guiding your choices and igniting your passion for reading.
 
 - Experience the convenience of assembling your literary treasures on-the-fly using our user-friendly "Add to Cart" feature. When you come across a book that captivates your interest, effortlessly include it in your collection with a quick click. Witness the real-time update as your choices populate the cart, presenting quantities for each book, as well as individual and cumulative prices. This live snapshot of your selections offers clarity and organization, ensuring a streamlined and engaging shopping experience.
 

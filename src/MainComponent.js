@@ -152,7 +152,6 @@ function MainComponent({
     );
     // Filter the array based on the conditions
     const filteredArray = filterObjectsByConditions(inventoryData, conditions);
-    console.log(filteredArray);
     setInventoryDataFilter(filteredArray);
 
     // Pagination
@@ -448,7 +447,6 @@ function CartFullViewB({ handleCartOpenClose, addToCart }) {
     (accumulator, currentValue) => accumulator + currentValue.counter,
     0
   );
-  console.log(totalPrice);
   return (
     <>
       <div className="cart-container">
