@@ -11,11 +11,7 @@ function FooterComponent() {
         <div class="logo-col">
           <div>
             <a href="home" class="footer-logo">
-              <img
-                src="./img/logo-small.png"
-                alt="Company Logo"
-                class="logo-img"
-              />
+              <img src="./logo-small.png" alt="Company Logo" class="logo-img" />
               <div className="footer-logo--text">
                 <h1 className="logo-h">Chapter Two</h1>
                 <div className="logo-tex">Second-Hand Book Store</div>
