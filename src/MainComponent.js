@@ -175,7 +175,7 @@ function MainComponent({
               cartOpenClose ? "cart-slide" : "cart-slide cart-slide--hidden"
             }
           >
-            <CartFullviewB
+            <CartFullViewB
               cartOpenClose={cartOpenClose}
               addToCart={addToCart}
               handleCartOpenClose={handleCartOpenClose}
@@ -438,7 +438,7 @@ function OpenLibrary({ itemProfile, handleFullViewId, handleAddToCart }) {
   }
 }
 
-function CartFullviewB({ handleCartOpenClose, addToCart }) {
+function CartFullViewB({ handleCartOpenClose, addToCart }) {
   const totalPrice = addToCart.reduce(
     (accumulator, currentValue) =>
       accumulator + currentValue.price * currentValue.counter,
