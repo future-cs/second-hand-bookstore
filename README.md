@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Chapter-Two - Second-Hand Book Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technology Stack
 
-## Available Scripts
+- REACT
+- JAVASCRIPT
+- HTML
+- CSS
 
-In the project directory, you can run:
+## Web App Description
 
-### `npm start`
+- Welcome to Chapter-Two: We open the doors to a realm where the written word lives on, stories are cherished anew, and the journey of each book continues in the hands of a new reader. As a haven for second-hand books, our virtual shelves are filled with tales of all genres, waiting to be explored by those who seek the magic of well-loved pages. Join us in the delightful pursuit of literary treasures that have stood the test of time and carry the whispers of countless adventures.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Navigate through our collection effortlessly by using our intuitive filtering options. Are you drawn to the tactile charm of a softcover or the enduring elegance of a hardcover? With a click, you can sort through your preferred condition, whether new or used, and select only free shipping options. Ensure that every book you explore aligns perfectly with your reading preferences.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Click in the book to access information by opening the Book Profile. Immerse yourself in the complete narrative of each book, from its author and plot intricacies to the essence that makes it unforgettable. With a simple click, access the extended world within the pages, guiding your choices and igniting your passion for reading.
 
-### `npm test`
+- Experience the convenience of assembling your literary treasures on-the-fly using our user-friendly "Add to Cart" feature. When you come across a book that captivates your interest, effortlessly include it in your collection with a quick click. Witness the real-time update as your choices populate the cart, presenting quantities for each book, as well as individual and cumulative prices. This live snapshot of your selections offers clarity and organization, ensuring a streamlined and engaging shopping experience.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Disclaimer
 
-### `npm run build`
+The information provided on this website is for general informational purposes only. This website is exclusively intended for portfolio purposes to showcase and demonstrate various skills and projects. While we strive to keep the information up to date and accurate, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please note that the content presented on this website is not meant to provide professional advice. It is solely intended to serve as a portfolio representation. You should always consult appropriate professionals for specific advice related to your situation.

@@ -12,7 +12,7 @@ function NavComponent({ handleHomeView, addToCart, handleCartOpenClose }) {
         <div className="nav-logo" onClick={() => handleHomeView()}>
           <img
             className="company-logo-img"
-            src="./img/logo-small.png"
+            src="./logo-small.png"
             alt="Company Logo"
           ></img>
           <div>

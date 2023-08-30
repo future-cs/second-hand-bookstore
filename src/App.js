@@ -40,25 +40,20 @@ function App() {
     setMainSection(true);
   }
 
-  function handleAddToCart(itemId, counter, fullViewBBBBB) {
+  function handleAddToCart(itemId, counter) {
     if (addToCart.some((item) => item.isbn === itemId.isbn)) {
-      console.log(itemId);
-      const testA = addToCart.find((item) => item.isbn === itemId.isbn);
-      testA.counter = testA.counter + counter;
+      const findId = addToCart.find((item) => item.isbn === itemId.isbn);
+      findId.counter = findId.counter + counter;
       setNav(nav + 1);
-
-      console.log(testA);
     } else {
       const addToCartLogic = addToCart;
       let makeObj = {};
       makeObj = itemId;
       makeObj.counter = counter;
-      // makeObj.fullViewBBBBB = fullViewBBBBB;
 
       addToCartLogic.push(makeObj);
       setAddToCart(addToCartLogic);
       setNav(nav + 1);
-      console.log(addToCart);
     }
   }
 

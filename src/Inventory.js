@@ -160,7 +160,7 @@ const inventoryExternalData = [
     softcover: true,
   },
   {
-    alternative_title: "Jurasiic Park",
+    alternative_title: "Jurassic Park",
     isbn: "0345370775",
     price: 8,
     freeShipping: true,

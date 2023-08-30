@@ -351,6 +351,16 @@ function OpenLibrary({ itemProfile, handleFullViewId, handleAddToCart }) {
   const [openFetch, setOpenFetch] = useState(null);
   const [orderCounter, setOrderCounter] = useState(1);
 
+  function handleOrderCounter(e) {
+    e.preventDefault();
+
+    if (orderCounter === 1) return;
+
+    if (orderCounter > 1) {
+      setOrderCounter((n) => n - 1);
+    }
+  }
+
   // const itemKey = itemProfile.isbn;
   useEffect(() => {
     fetchData();
@@ -370,19 +380,19 @@ function OpenLibrary({ itemProfile, handleFullViewId, handleAddToCart }) {
   };
 
   if (openFetch) {
-    const openDistruc = openFetch[`ISBN:${itemProfile.isbn}`];
+    const openProfile = openFetch[`ISBN:${itemProfile.isbn}`];
     return (
       <div className="list-item openLibrary">
         <div
           className="list-item--img-text"
-          onClick={() => handleFullViewId(openDistruc, itemProfile)}
+          onClick={() => handleFullViewId(openProfile, itemProfile)}
         >
           <div className="item-div--img">
             {" "}
-            {openDistruc.cover !== null ? (
+            {openProfile.cover !== null ? (
               <img
                 className="item-img"
-                src={openDistruc.cover.medium}
+                src={openProfile.cover.medium}
                 alt="Computer Drawing"
               ></img>
             ) : (
@@ -394,8 +404,8 @@ function OpenLibrary({ itemProfile, handleFullViewId, handleAddToCart }) {
             )}
           </div>
           <div className="item-div--text">
-            <h3>{openDistruc.title}</h3>
-            <p>by {openDistruc.authors[0].name}</p>
+            <h3>{openProfile.title}</h3>
+            <p>by {openProfile.authors[0].name}</p>
           </div>
         </div>
         <div className="list-item--price-cart">
@@ -403,7 +413,7 @@ function OpenLibrary({ itemProfile, handleFullViewId, handleAddToCart }) {
           <div className="list-item--btn-div">
             <button
               className="item--btn item--btn-sml"
-              onClick={() => setOrderCounter((n) => n - 1)}
+              onClick={(e) => handleOrderCounter(e)}
             >
               <HiMinus />
             </button>
@@ -438,7 +448,6 @@ function CartFullviewB({ handleCartOpenClose, addToCart }) {
     (accumulator, currentValue) => accumulator + currentValue.counter,
     0
   );
-  // console.log(cartList);
   console.log(totalPrice);
   return (
     <>

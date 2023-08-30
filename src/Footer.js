@@ -40,7 +40,7 @@ function FooterComponent() {
             </ul>
           </div>
           <p class="copyright">
-            Copyrihgt &copy; 2023 by Chapter Two, Inc. All rights reserved.
+            Copyright &copy; 2023 by Chapter Two, Inc. All rights reserved.
           </p>
         </div>
         <div class="address-col">

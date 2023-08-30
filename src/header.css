@@ -24,7 +24,6 @@
 .nav-logo {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   gap: 0.8rem;
   cursor: pointer;
 }
@@ -41,11 +40,8 @@
 
 .logo-text {
   font-size: 1.6rem;
-  color: #6290c8;
   color: #376996;
   font-weight: 400;
-  /* letter-spacing: 0.5px; */
-  /* text-align: center; */
 }
 
 .main-nav--ul {
@@ -59,29 +55,6 @@
   list-style: none;
   text-decoration: none;
 }
-
-/* .main-nav--li button {
-  color: #1f487e;
-  border: none;
-  background-color: #d2dae5;
-
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.8rem;
-  cursor: pointer;
-  padding: 0.8rem 1.6rem;
-  border-radius: 4px;
-  transition: all 0.3s;
-
-  display: flex;
-  gap: 0.4rem;
-}
-.main-nav--li button:hover,
-.main-nav--li button:active {
-  background-color: #bcc8d8;
-  color: #1d3461;
-  transform: scale(1.03);
-} */
 
 .cart-btn {
   position: relative;

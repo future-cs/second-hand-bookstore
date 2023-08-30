@@ -4,7 +4,7 @@
 FONT SIZE SYSTEM (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
-Font wheights:
+Font weights:
 
 Default: 400
 light: 300 - it helped to create contrast
@@ -48,7 +48,7 @@ secondary options
 --- 05 Shadows
 
 --- 06 Border Radius
-defaut 2px - only to make it look more pleasant, it was too sharp
+default 2px - only to make it look more pleasant, it was too sharp
 
 --- 07 Whitespace
 SPACING SYSTEM (px)
@@ -133,12 +133,7 @@ body {
 }
 .all--btn:hover,
 .all--btn:active {
-  background-color: #bcc8d8;
   background-color: #1c4171;
-
-  color: #1d3461;
   color: #bcc8d8;
-
-  /* font-weight: 600; */
   transform: scale(1.03);
 }

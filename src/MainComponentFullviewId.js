@@ -11,6 +11,16 @@ import {
 function MainComponentFullViewId({ fullViewId, fullViewIdB, handleAddToCart }) {
   const [orderCounter, setOrderCounter] = useState(1);
 
+  function handleOrderCounter(e) {
+    e.preventDefault();
+
+    if (orderCounter === 1) return;
+
+    if (orderCounter > 1) {
+      setOrderCounter((n) => n - 1);
+    }
+  }
+
   return (
     <section className="main-section">
       <div className="full-view-grid">
@@ -85,7 +95,7 @@ function MainComponentFullViewId({ fullViewId, fullViewIdB, handleAddToCart }) {
             <div className="full-view--btn-div">
               <button
                 className="full-view--btn"
-                onClick={() => setOrderCounter((n) => n - 1)}
+                onClick={(e) => handleOrderCounter(e)}
               >
                 <HiMinus />
               </button>
