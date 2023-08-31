@@ -80,14 +80,17 @@ function MainComponentFullViewId({ fullViewId, fullViewIdB, handleAddToCart }) {
               <span className="full-view-headers">Notes:</span>
               <span className="full-view-results">{fullViewId.notes}</span>
             </li>
+          </ul>
+          <ul className="full-view-ul">
             <li className="full-view-li">
-              <span className="full-view-headers">
-                What is this book about:
-              </span>
-              <span className="full-view-results">
-                {fullViewId.subjects.map((i) => i.name).join(" ,")}
-              </span>
+              <span>Topics:</span>
             </li>
+
+            {fullViewId.subjects.map((sub) => (
+              <li className="full-view-li" key={sub.name}>
+                <span>{sub.name}</span>
+              </li>
+            ))}
           </ul>
 
           <div className="full-view--price-cart">
